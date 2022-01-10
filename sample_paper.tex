@@ -1,0 +1,105 @@
+\documentclass{amsart}
+
+\include{packages_paper}
+\include{macros_paper}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\pagestyle{plain}
+\title{Sample \LaTeX\ Paper/Project Write-up Format}
+\author{{{Collin Kofroth}}}
+\date{1/10/2022}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+Here's a sample \LaTeX\ template. I'll highlight a few things that I do differently.
+
+\end{abstract}
+
+\tableofcontents
+
+%$$P=(D_\alpha +A_\alpha) g^{\alpha\beta} (D_\beta+A_\beta)+iaD_t+V(t,x),$$ where $a, A_\alpha$ are real-valued, and $g,a, A$ are functions of $x$ alone. We might as well just consider $$P=D_\alpha g^{\alpha\beta}D_\beta+iaD_t.$$ If we assume that $\partial_t$ is uniformly time-like, we may divide through by $-g^{00}$ and preserve our assumptions on the operator coefficients. Hence, WLOG, we may assume that $g^{00}=-1$. The principal symbol of this operator is $$p(\tau, x,\xi)=\tau^2-2g^{j0}\tau\xi_j-g^{ij}\xi_i\xi_j.$$ 
+
+\section{A Section}
+
+This is how you generate a section. A few things that I want to point out are how the theorem environments look and differ (some are not in italics), and how I modified the remark environment (as well as the example one, which is not shown but similar).
+
+\subsection{A Subsection}
+
+This is how you generate a subsection. Here's a theorem.
+
+\begin{Th}[Smoothness of Eigenfunctions, Lemma 14.5 in \cite{Zw}] \label{efun smooth}
+Let $z\in\C$ and $u\in L^2(M)$ be such that $$(-h^2\Delta_g-z)u=0,$$ interpreted in the sense of distributions. Then, $u\in C^\infty(M)$.
+\end{Th}
+
+Here's a corollary.
+
+\begin{Cor}
+If $z$ is an eigenvalue, then the corresponding eigenfunction is smooth. 
+\end{Cor}
+
+\begin{proof}[Proof of Theorem \ref{efun smooth}]
+I don't want to prove this right now.
+\end{proof}
+
+Moving on!
+
+\subsection{Another Subsection}
+
+The definitions look a bit different.
+
+\begin{definition}[Theorem 3.6 in \cite{Zw}]\label{ana_ext}
+Let $f\in \calS(\R).$  We say that $\tilde{f}$ is an analytic extension of $f$ to the complex plane provided that
+\begin{enumerate}
+\item $\tilde{f}\in C^\infty(\C),$ $\tilde{f}\big|_{\R}=f$ \item $\supp\tilde{f}\subset \{z\in\C: |\imag z|\leq 1\}$
+\item $\bar{\partial}_z\tilde{f}(z)=\bigO(|\imag z|^\infty),$ where $\displaystyle{\bar{\partial}_z=\frac{1}{2}(\partial_x+i\partial_y)}$ is the Cauchy-Riemann operator.
+\end{enumerate}
+\end{definition}
+
+I did not want the definitions to be italicized. Here is one more relevant type of mathematical statement.
+
+\begin{prop}
+Let $f\in\calS(\R^n),$ and fix a cutoff $\chi\in C_c^\infty((-1,1))$ such that $\chi\equiv 1$ on $[-1/2,1/2].$  Then, $$\tilde{f}(z):=\frac{1}{2\pi}\chi(y)\int\limits_{\R}\chi(y\xi)\hat{f}(\xi)e^{i\xi(x+iy)}\, d\xi$$ is an almost-analytic extension of $f$ to the complex plane (in the sense of Definition \ref{ana_ext}).  
+\end{prop}
+
+\section{Another Section}
+
+Remarks also look a bit different.
+
+\begin{remark}
+Here is a remark on something, probably a very insightful comment. This puts a triangle at the end to indicate the end of the remark, which can be useful since remarks can be long and otherwise blend into the text.
+\end{remark}
+
+One last thing is the bibliography. I'm using bibtex; see the file ``biblio.bib." One must explicitly cite the articles for them to be shown. I will show some different types here (\cite{Lebeau}, \cite{Mor1,Mor2,Mor3}, \cite{MorWun},\cite{Perry},\cite{Tat1}), but I will omit one item from the aforementioned file (to demonstrate that it will not show up)
+
+\section*{Acknowledgments}
+I want to thank my poor handwriting and past graders for making me learn LaTeX earlier than many others.
+
+\appendix
+
+\section{Pseudocode}
+Here's how you can do pseudocode:
+
+\vspace*{.2in}
+
+\begin{center}
+\begin{algorithmic}
+\State Solve $Ax_0= c$
+\State $r\gets Bx_0-c$
+\State tol$\gets 1e$-6
+\State $i\gets 0$
+\While{$\norm{r_i}>tol$}
+\State Solve $Ad_i=r_i$
+\State $x_{i+1}\gets x_i-d_i$
+\State $i$++
+\EndWhile
+\end{algorithmic}
+\end{center}
+
+\bibliographystyle{amsplain}
+\bibliography{biblio}
+\end{document}
+
