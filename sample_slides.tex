@@ -1,0 +1,173 @@
+\documentclass[article]{beamer}
+\mode<presentation> {
+\include{packages_slides} 
+\include{macros_slides}
+
+
+
+
+\setbeamertemplate{theorems}[unnumbered]
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+
+%\\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+
+%%%%%%%%%%%%%%%%%
+%FONT
+%\usefonttheme{professionalfonts}
+%\PassOptionsToPackage{no-math}{fontspec}
+\usefonttheme[onlymath]{serif}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\title[Conference Name]{Sample Talk Slides} 
+
+\author{Collin Kofroth}  % Your name
+\institute[Name of University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+\small{Name of University} \\ % Your institution for the title page
+%\medskip
+%\textit{email} % Your email address
+}
+\date{January 10, 2022} % date
+\pgfdeclareimage[width=1.5cm]{unc_logo}{unc_logo} % logos
+\logo{\pgfuseimage{logo}{\vspace{-10pt}}}
+\logo{
+    \includegraphics[width=1cm,height=1cm,keepaspectratio]{unc_logo}
+}
+\setbeamertemplate{navigation symbols}{}
+\AtBeginSection[]
+{
+    \begin{frame}<beamer>{Outline}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+
+%------------------------------------------------
+ 
+\begin{frame}{Sample Slide} 
+Define $$\Box:=\frac{\partial^2}{\partial t^2}-\Delta,\qquad \Delta:=\sum\limits_{j=1}^n\frac{\partial^2}{\partial x_j^2}.$$ The wave equation on $\R_+\times\R^n$:
+    
+\begin{equation*}
+    \left\{\begin{aligned}
+        \Box u&=0\\
+        u(0,x)&=f(x)\\
+        \partial_t u(0,x)&=g(x)
+    \end{aligned}\right.
+\end{equation*}
+    
+\vspace*{.1in}
+{
+    \centering{  
+    \begin{figure}[hbt!]
+    \includegraphics[scale=0.2]{water}
+    %\caption{caption}
+    \end{figure}}
+}
+\end{frame}
+
+\begin{frame}{Sample Slide II}
+Suppose that 
+
+\begin{itemize}
+    \item $\Box u=0$
+    \item For every $t$, $u(t,x)=0$ for $|x|$ large
+\end{itemize} 
+
+\vspace*{.15in}
+Then,  $$E[u](t):=\frac{1}{2}\int \left(|\partial_tu|^2+|\nabla_x u|^2\right)\, dx$$is  constant in $t$ (and equals $E[u](0)$).
+\vspace*{.1in} 
+
+\begin{proof}
+  Literally differentiate with respect to $t$.
+\end{proof}
+\end{frame}
+
+\begin{frame}{Sample Slide III}
+A random theorem, a special case of the main theorem in \textcolor{blue}{[1]}:
+\vspace*{.1in}
+
+\begin{Th}
+Solutions to the homogeneous wave equation on the Schwarzschild space-time enjoy a pointwise decay rate of $t^{-3}$ for compactly-supported Cauchy data.
+\end{Th}
+
+\vspace*{.1in}
+
+{
+    \centering{  
+    \begin{figure}[hbt!]
+    \includegraphics[scale=1]{BH.eps}
+    \caption{Schwarzschild black hole embedding diagram}
+    \end{figure}}
+}
+
+\end{frame}
+
+\begin{frame}{References}
+
+\begin{enumerate}[label={\textcolor{blue}{[\arabic*]}}]
+    \item D. Tataru, \textit{Local decay of waves on asymptotically flat stationary space-times}, Amer. J. Math. \textbf{135} (2013), no. 2, 361–401.
+\end{enumerate}
+
+\end{frame}
+
+\end{document}
